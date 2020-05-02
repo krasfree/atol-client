@@ -122,6 +122,7 @@ class AtolClient
             $msg .= "\nresponse content" . $response->getBody()->getContents();
             $msg .= "\nattempts request: " . $this->attempts;
             $msg .= "\nattempts check status: " . $this->attemptsCheckStatus;
+            $response->getBody()->rewind();
 
             $this->logger->debug($msg);
         }
